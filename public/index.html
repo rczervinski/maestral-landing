@@ -118,14 +118,11 @@
 <!-- TopNavBar -->
 <header class="fixed top-0 w-full z-50 bg-surface/40 backdrop-blur-xl dark:bg-black/40 shadow-2xl shadow-green-900/10">
   <nav class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
-    <div class="flex items-center gap-3">
-      <svg class="text-[#1B5E20]" fill="none" height="32" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
-        <path d="M16 2L24 14H19V22H24L16 30L8 22H13V14H8L16 2Z" fill="currentColor"></path>
-      </svg>
-      <div class="text-2xl font-black tracking-tighter uppercase font-headline">
-        <span class="text-white">Ma</span><span class="text-[#C62828]">&amp;</span><span class="text-[#00838F]">Stral</span>
-      </div>
-    </div>
+    <a href="#" class="flex items-center" aria-label="Ma&Stral - Início">
+      <span class="inline-flex items-center bg-white rounded-xl px-4 py-2 shadow-md hover:shadow-lg transition-shadow">
+        <img src="/maestral-logo.svg" alt="Ma&Stral" class="h-8 w-auto"/>
+      </span>
+    </a>
     <div class="hidden md:flex gap-8 items-center font-headline font-bold tracking-tight text-lg">
       <a class="text-on-surface-variant hover:text-white transition-colors" href="#services">Serviços</a>
       <a class="text-on-surface-variant hover:text-white transition-colors" href="#tech">Tecnologia</a>
@@ -211,36 +208,238 @@
   </div>
 </section>
 
-<!-- Clients Carousel -->
-<section class="py-20 bg-white dark:bg-surface-bright overflow-hidden border-y border-outline-variant/10">
-  <div class="container mx-auto px-8 mb-12 text-center">
-    <h3 class="font-label text-sm uppercase tracking-[0.4em] text-outline">Empresas que confiam na Ma&amp;Stral</h3>
+<!-- Stats / Métricas -->
+<section class="py-24 bg-white dark:bg-surface-bright overflow-hidden border-y border-outline-variant/10">
+  <div class="container mx-auto px-8 mb-16 text-center">
+    <span class="font-label text-primary tracking-widest uppercase text-sm mb-4 block">Nossos Números</span>
+    <h2 class="text-3xl md:text-5xl font-black font-headline tracking-tighter">Resultados Que Falam Por Nós</h2>
   </div>
-  <div class="flex overflow-hidden">
-    <div class="flex shrink-0 animate-marquee" style="min-width:max-content">
-      <div class="flex gap-20 items-center px-10 shrink-0">
-        <img src="/assets/logos/1.png" alt="Cliente" class="h-12 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"/>
-        <img src="/assets/logos/2.png" alt="Cliente" class="h-12 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"/>
-        <img src="/assets/logos/3.png" alt="Cliente" class="h-12 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"/>
-        <img src="/assets/logos/4.png" alt="Cliente" class="h-12 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"/>
-        <img src="/assets/logos/5.png" alt="Cliente" class="h-12 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"/>
-        <img src="/assets/logos/1.png" alt="Cliente" class="h-12 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"/>
-        <img src="/assets/logos/2.png" alt="Cliente" class="h-12 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"/>
-        <img src="/assets/logos/3.png" alt="Cliente" class="h-12 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"/>
-        <img src="/assets/logos/4.png" alt="Cliente" class="h-12 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"/>
-        <img src="/assets/logos/5.png" alt="Cliente" class="h-12 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"/>
+  <div class="max-w-7xl mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-6">
+    <div class="text-center">
+      <div class="text-5xl md:text-7xl font-black font-headline text-[#1B5E20] leading-none counter" data-target="180">0</div>
+      <p class="mt-4 font-label text-xs md:text-sm uppercase tracking-[0.3em] text-on-surface-variant">Fazendas Atendidas</p>
+    </div>
+    <div class="text-center">
+      <div class="text-5xl md:text-7xl font-black font-headline text-[#00838F] leading-none counter" data-target="38000">0</div>
+      <p class="mt-4 font-label text-xs md:text-sm uppercase tracking-[0.3em] text-on-surface-variant">Hectares Plantados</p>
+    </div>
+    <div class="text-center">
+      <div class="text-5xl md:text-7xl font-black font-headline text-[#C62828] leading-none counter" data-target="42">0</div>
+      <p class="mt-4 font-label text-xs md:text-sm uppercase tracking-[0.3em] text-on-surface-variant">Equipes em Campo</p>
+    </div>
+    <div class="text-center">
+      <div class="text-5xl md:text-7xl font-black font-headline text-[#1B5E20] leading-none counter" data-target="14">0</div>
+      <p class="mt-4 font-label text-xs md:text-sm uppercase tracking-[0.3em] text-on-surface-variant">Cidades no Paraná</p>
+    </div>
+  </div>
+</section>
+<!-- About -->
+<section class="py-32 bg-white text-surface-dim relative" id="about">
+  <div class="max-w-7xl mx-auto px-8 relative z-10">
+    <!-- Section header: logo centralizada como chamada -->
+    <div class="flex flex-col items-center text-center max-w-3xl mx-auto mb-20">
+      <img src="/maestral-logo.svg" alt="Ma&Stral Florestal" class="h-20 md:h-28 w-auto mb-8"/>
+      <span class="font-label text-primary tracking-[0.4em] uppercase text-xs mb-5 block">Quem Somos</span>
+      <h2 class="text-4xl md:text-6xl font-black font-headline tracking-tighter mb-6 text-surface-dim leading-[1.05]">
+        Nascida Na Terra,<br/>Impulsionada Por Dados.
+      </h2>
+      <p class="text-base md:text-lg font-body leading-relaxed opacity-70 max-w-2xl mb-8">
+        A Ma&amp;Stral é fruto da união entre o conhecimento ancestral da terra e o desejo de transformar o setor ambiental através da inovação. Somos mais que uma consultoria — somos parceiros estratégicos de quem produz e preserva.
+      </p>
+      <a class="inline-flex items-center gap-2 px-8 py-4 bg-surface text-white rounded-xl font-bold hover:scale-105 transition-transform" href="https://wa.me/5541991511406?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Ma%26Stral." target="_blank" rel="noopener noreferrer">
+        Fale com a equipe
+        <span class="material-symbols-outlined text-base">arrow_forward</span>
+      </a>
+    </div>
+
+    <!-- Pillars -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 items-stretch">
+        <div class="bg-white p-8 rounded-2xl border-t-[3px] border-primary border-x border-b border-gray-100 shadow-xl hover:-translate-y-2 transition-all min-w-0 sm:min-w-[200px]">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+            <span class="material-symbols-outlined text-primary text-2xl">park</span>
+          </div>
+          <h4 class="font-headline font-black text-xl lg:text-2xl mb-4 text-surface-dim">Reflorestamento</h4>
+          <p class="text-sm font-body leading-relaxed opacity-70 text-surface-dim">Recuperação de áreas degradadas com espécies nativas e planos de manejo sustentável.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl border-t-[3px] border-primary border-x border-b border-gray-100 shadow-xl hover:-translate-y-2 transition-all min-w-0 sm:min-w-[200px]">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+            <span class="material-symbols-outlined text-primary text-2xl">public</span>
+          </div>
+          <h4 class="font-headline font-black text-xl lg:text-2xl mb-4 text-surface-dim">Meio Ambiente</h4>
+          <p class="text-sm font-body leading-relaxed opacity-70 text-surface-dim">Equilíbrio rigoroso entre o progresso econômico e a integridade dos ecossistemas locais.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl border-t-[3px] border-primary border-x border-b border-gray-100 shadow-xl hover:-translate-y-2 transition-all min-w-0 sm:min-w-[200px]">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+            <span class="material-symbols-outlined text-primary text-2xl">agriculture</span>
+          </div>
+          <h4 class="font-headline font-black text-xl lg:text-2xl mb-4 text-surface-dim">Agricultura</h4>
+          <p class="text-sm font-body leading-relaxed opacity-70 text-surface-dim">Otimização de safras através de insumos precisos e monitoramento aéreo contínuo.</p>
+        </div>
       </div>
-      <div class="flex gap-20 items-center px-10 shrink-0">
-        <img src="/assets/logos/1.png" alt="Cliente" class="h-12 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"/>
-        <img src="/assets/logos/2.png" alt="Cliente" class="h-12 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"/>
-        <img src="/assets/logos/3.png" alt="Cliente" class="h-12 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"/>
-        <img src="/assets/logos/4.png" alt="Cliente" class="h-12 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"/>
-        <img src="/assets/logos/5.png" alt="Cliente" class="h-12 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"/>
-        <img src="/assets/logos/1.png" alt="Cliente" class="h-12 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"/>
-        <img src="/assets/logos/2.png" alt="Cliente" class="h-12 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"/>
-        <img src="/assets/logos/3.png" alt="Cliente" class="h-12 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"/>
-        <img src="/assets/logos/4.png" alt="Cliente" class="h-12 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"/>
-        <img src="/assets/logos/5.png" alt="Cliente" class="h-12 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"/>
+
+    <!-- Impact: Before/After + Charts -->
+    <div class="mt-24">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div>
+          <span class="font-label text-primary tracking-widest uppercase text-sm mb-3 block">Impacto Real</span>
+          <h3 class="text-3xl md:text-5xl font-black font-headline tracking-tighter text-surface-dim">Da Degradação à Floresta.</h3>
+        </div>
+        <p class="text-base md:text-lg opacity-70 max-w-md">Comparativos aéreos reais de áreas de Pinus recuperadas pela Ma&amp;Stral em parceiros do Paraná. Arraste a alça para revelar o antes e depois.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Before / After slider -->
+        <div class="lg:col-span-7">
+          <div id="ba-compare" class="relative rounded-3xl overflow-hidden shadow-2xl select-none cursor-ew-resize aspect-[16/10] bg-surface-container-high">
+            <img src="/assets/images/about-depois.png" alt="Área reflorestada vista por drone" class="absolute inset-0 w-full h-full object-cover pointer-events-none" loading="lazy"/>
+            <div id="ba-clip" class="absolute inset-0 overflow-hidden pointer-events-none" style="width:50%">
+              <img src="/assets/images/about-antes.png" alt="Área degradada vista por drone" class="absolute inset-0 h-full object-cover" style="width:calc(100vw); max-width:none;" loading="lazy"/>
+            </div>
+            <div class="absolute top-4 left-4 bg-black/70 backdrop-blur text-white text-xs font-label uppercase tracking-widest px-3 py-1.5 rounded-full">Antes</div>
+            <div class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-label uppercase tracking-widest px-3 py-1.5 rounded-full">Depois</div>
+            <div id="ba-handle" class="absolute top-0 bottom-0 w-1 bg-white shadow-[0_0_20px_rgba(0,0,0,0.5)] pointer-events-none" style="left:50%">
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-2xl flex items-center justify-center">
+                <span class="material-symbols-outlined text-surface-dim text-2xl">drag_indicator</span>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-3 gap-4 mt-4 text-center">
+            <div class="bg-gray-50 rounded-xl p-4 border border-gray-100">
+              <div class="text-2xl md:text-3xl font-black font-headline text-primary">+340%</div>
+              <p class="text-[11px] uppercase tracking-widest opacity-60 mt-1">Cobertura Vegetal</p>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-4 border border-gray-100">
+              <div class="text-2xl md:text-3xl font-black font-headline text-primary">36 meses</div>
+              <p class="text-[11px] uppercase tracking-widest opacity-60 mt-1">Tempo de Recuperação</p>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-4 border border-gray-100">
+              <div class="text-2xl md:text-3xl font-black font-headline text-primary">12 espécies</div>
+              <p class="text-[11px] uppercase tracking-widest opacity-60 mt-1">Nativas Plantadas</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Impact panel -->
+        <div class="lg:col-span-5 bg-gray-50 rounded-3xl p-8 text-surface-dim shadow-xl border border-gray-100 flex flex-col">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="material-symbols-outlined text-primary text-3xl">monitoring</span>
+            <h4 class="font-headline font-black text-2xl">Impacto Mensurado</h4>
+          </div>
+
+          <p class="text-sm opacity-70 mb-6 leading-relaxed">Hectares reflorestados pela Ma&amp;Stral por ano. Dados consolidados de operações em campo.</p>
+
+          <!-- SVG bar chart -->
+          <div class="mb-8">
+            <svg viewBox="0 0 320 160" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" aria-label="Hectares plantados por ano">
+              <!-- grid lines -->
+              <line x1="0" y1="20" x2="320" y2="20" stroke="#E5E7EB" stroke-width="1"/>
+              <line x1="0" y1="60" x2="320" y2="60" stroke="#E5E7EB" stroke-width="1"/>
+              <line x1="0" y1="100" x2="320" y2="100" stroke="#E5E7EB" stroke-width="1"/>
+              <line x1="0" y1="140" x2="320" y2="140" stroke="#9CA3AF" stroke-width="1"/>
+              <!-- bars: 6 anos. heights ~ proporcional. cor primária -->
+              <g class="ba-bar-group">
+                <rect x="14"  y="110" width="32" height="30"  rx="4" fill="#1B5E20" opacity="0.45"/>
+                <rect x="64"  y="92"  width="32" height="48"  rx="4" fill="#1B5E20" opacity="0.6"/>
+                <rect x="114" y="74"  width="32" height="66"  rx="4" fill="#1B5E20" opacity="0.72"/>
+                <rect x="164" y="54"  width="32" height="86"  rx="4" fill="#1B5E20" opacity="0.84"/>
+                <rect x="214" y="42"  width="32" height="98"  rx="4" fill="#1B5E20" opacity="0.92"/>
+                <rect x="264" y="28"  width="32" height="112" rx="4" fill="#1B5E20"/>
+              </g>
+              <!-- labels -->
+              <g font-family="Inter, sans-serif" font-size="9" fill="#6B7280" text-anchor="middle">
+                <text x="30"  y="154">2021</text>
+                <text x="80"  y="154">2022</text>
+                <text x="130" y="154">2023</text>
+                <text x="180" y="154">2024</text>
+                <text x="230" y="154">2025</text>
+                <text x="280" y="154">2026</text>
+              </g>
+              <g font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#1B5E20" text-anchor="middle">
+                <text x="30"  y="105">2.5k</text>
+                <text x="80"  y="87">4.0k</text>
+                <text x="130" y="69">5.5k</text>
+                <text x="180" y="49">7.2k</text>
+                <text x="230" y="37">8.5k</text>
+                <text x="280" y="23">10k</text>
+              </g>
+            </svg>
+            <p class="text-[11px] opacity-50 mt-2 text-center uppercase tracking-widest">Hectares Plantados / Ano</p>
+          </div>
+
+          <!-- Mini KPIs -->
+          <div class="grid grid-cols-2 gap-3 mt-auto">
+            <div class="bg-white rounded-xl p-4 border border-gray-100">
+              <div class="flex items-baseline gap-1">
+                <span class="text-2xl font-black font-headline text-primary">28.4</span>
+                <span class="text-xs font-bold opacity-60">mil t</span>
+              </div>
+              <p class="text-[11px] uppercase tracking-widest opacity-60 mt-1">CO₂ Sequestrado</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 border border-gray-100">
+              <div class="flex items-baseline gap-1">
+                <span class="text-2xl font-black font-headline text-primary">1.2</span>
+                <span class="text-xs font-bold opacity-60">milhão</span>
+              </div>
+              <p class="text-[11px] uppercase tracking-widest opacity-60 mt-1">Mudas de Pinus</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 border border-gray-100">
+              <div class="flex items-baseline gap-1">
+                <span class="text-2xl font-black font-headline text-primary">96%</span>
+              </div>
+              <p class="text-[11px] uppercase tracking-widest opacity-60 mt-1">Taxa de Sobrevivência</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 border border-gray-100">
+              <div class="flex items-baseline gap-1">
+                <span class="text-2xl font-black font-headline text-primary">14</span>
+                <span class="text-xs font-bold opacity-60">cidades</span>
+              </div>
+              <p class="text-[11px] uppercase tracking-widest opacity-60 mt-1">Atendidas no PR</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cases gallery -->
+      <div class="mt-12">
+        <h4 class="font-label text-xs uppercase tracking-[0.4em] opacity-60 mb-6">Cases recentes</h4>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <article class="group relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+            <img src="/assets/images/case-fazenda-1.png" alt="Drone sobre fazenda reflorestada" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <span class="text-[11px] font-label uppercase tracking-widest text-primary">Tunas do Paraná · PR · 2025</span>
+              <h5 class="font-headline font-black text-xl mt-2 leading-tight">Fazenda Santa Clara</h5>
+              <div class="flex gap-4 mt-3 text-xs opacity-80">
+                <span><b class="text-primary">240 ha</b> de Pinus</span>
+                <span><b class="text-primary">14 meses</b></span>
+              </div>
+            </div>
+          </article>
+          <article class="group relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+            <img src="/assets/images/case-fazenda-2.png" alt="Drone sobre plantio em linhas" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <span class="text-[11px] font-label uppercase tracking-widest text-primary">Curitiba · RM · 2024</span>
+              <h5 class="font-headline font-black text-xl mt-2 leading-tight">Reserva Araucária</h5>
+              <div class="flex gap-4 mt-3 text-xs opacity-80">
+                <span><b class="text-primary">180 ha</b> mapeados</span>
+                <span><b class="text-primary">RTK 2cm</b></span>
+              </div>
+            </div>
+          </article>
+          <article class="group relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+            <img src="/assets/images/case-fazenda-3.png" alt="Drone pulverizando talhão de eucalipto" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <span class="text-[11px] font-label uppercase tracking-widest text-primary">Bocaiúva do Sul · PR · 2025</span>
+              <h5 class="font-headline font-black text-xl mt-2 leading-tight">Talhão Pinus Sul</h5>
+              <div class="flex gap-4 mt-3 text-xs opacity-80">
+                <span><b class="text-primary">280 ha</b> pulverizados</span>
+                <span><b class="text-primary">-38%</b> insumos</span>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </div>
   </div>
@@ -388,12 +587,12 @@
       <div class="absolute -bottom-10 -right-10 w-40 h-40 border-r border-b border-primary/40 rounded-br-3xl"></div>
       <img class="rounded-2xl shadow-2xl relative z-10 w-full tilt-on-scroll" id="drone-img" src="/assets/images/drone-tech.jpg" alt="Drone profissional com tecnologia de ponta" loading="lazy"/>
       <div class="absolute -bottom-6 -left-6 glass-panel p-6 rounded-2xl border border-outline-variant/20 z-20">
-        <div class="text-primary font-black font-headline text-4xl leading-none counter" data-target="15000">0</div>
+        <div class="text-primary font-black font-headline text-4xl leading-none counter" data-target="38000">0</div>
         <div class="font-label text-xs uppercase tracking-widest mt-2">Hectares Mapeados</div>
       </div>
       <div class="absolute -top-6 -right-6 bg-primary p-6 rounded-2xl shadow-xl z-20">
-        <div class="text-on-primary font-black font-headline text-4xl leading-none counter" data-target="500">0</div>
-        <div class="text-on-primary font-label text-xs uppercase tracking-widest mt-2">Projetos Ativos</div>
+        <div class="text-on-primary font-black font-headline text-4xl leading-none counter" data-target="42">0</div>
+        <div class="text-on-primary font-label text-xs uppercase tracking-widest mt-2">Equipes em Campo</div>
       </div>
     </div>
     <div class="flex-1">
@@ -435,45 +634,6 @@
   </div>
 </section>
 
-<!-- About -->
-<section class="py-32 bg-on-surface text-surface topo-pattern relative" id="about">
-  <div class="max-w-7xl mx-auto px-8 relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-      <div class="lg:col-span-4">
-        <h2 class="text-5xl font-black font-headline tracking-tighter mb-8 text-surface">Nascida Na Terra, <br/>Impulsionada Por <br/>Dados.</h2>
-        <p class="text-lg font-body leading-relaxed mb-8 opacity-80">
-          A Ma&amp;Stral é fruto da união entre o conhecimento ancestral da terra e o desejo de transformar o setor ambiental através da inovação. Somos mais que uma consultoria; somos parceiros estratégicos de quem produz e preserva.
-        </p>
-        <a class="inline-block px-8 py-4 bg-surface text-white rounded-xl font-bold hover:translate-x-2 transition-transform" href="https://wa.me/5541991511406?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Ma%26Stral." target="_blank" rel="noopener noreferrer">
-          Fale com a equipe
-        </a>
-      </div>
-      <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-6 items-stretch">
-        <div class="bg-white p-8 rounded-2xl border-t-[3px] border-primary shadow-xl hover:-translate-y-2 transition-all min-w-0 sm:min-w-[200px]">
-          <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-            <span class="material-symbols-outlined text-primary text-2xl">park</span>
-          </div>
-          <h4 class="font-headline font-black text-xl lg:text-2xl mb-4 text-surface-dim">Reflorestamento</h4>
-          <p class="text-sm font-body leading-relaxed opacity-70 text-surface-dim">Recuperação de áreas degradadas com espécies nativas e planos de manejo sustentável.</p>
-        </div>
-        <div class="bg-white p-8 rounded-2xl border-t-[3px] border-primary shadow-xl hover:-translate-y-2 transition-all min-w-0 sm:min-w-[200px]">
-          <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-            <span class="material-symbols-outlined text-primary text-2xl">public</span>
-          </div>
-          <h4 class="font-headline font-black text-xl lg:text-2xl mb-4 text-surface-dim">Meio Ambiente</h4>
-          <p class="text-sm font-body leading-relaxed opacity-70 text-surface-dim">Equilíbrio rigoroso entre o progresso econômico e a integridade dos ecossistemas locais.</p>
-        </div>
-        <div class="bg-white p-8 rounded-2xl border-t-[3px] border-primary shadow-xl hover:-translate-y-2 transition-all min-w-0 sm:min-w-[200px]">
-          <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-            <span class="material-symbols-outlined text-primary text-2xl">agriculture</span>
-          </div>
-          <h4 class="font-headline font-black text-xl lg:text-2xl mb-4 text-surface-dim">Agricultura</h4>
-          <p class="text-sm font-body leading-relaxed opacity-70 text-surface-dim">Otimização de safras através de insumos precisos e monitoramento aéreo contínuo.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- CTA -->
 <section class="p-8" id="contact">
@@ -493,11 +653,10 @@
 <footer class="w-full rounded-t-[2rem] mt-20 bg-surface-container-lowest dark:bg-[#0E0E0E]">
   <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-7xl mx-auto">
     <div class="md:col-span-2">
-      <div class="flex items-center gap-3 mb-8">
-        <svg class="text-[#1B5E20]" fill="none" height="40" viewBox="0 0 32 32" width="40">
-          <path d="M16 2L24 14H19V22H24L16 30L8 22H13V14H8L16 2Z" fill="currentColor"></path>
-        </svg>
-        <span class="text-4xl font-black text-white font-headline">Ma<span class="text-[#C62828]">&amp;</span><span class="text-[#00838F]">Stral</span></span>
+      <div class="mb-8">
+        <span class="inline-flex items-center bg-white rounded-2xl px-6 py-4 shadow-lg">
+          <img src="/maestral-logo.svg" alt="Ma&Stral" class="h-12 w-auto"/>
+        </span>
       </div>
       <p class="text-gray-500 font-body max-w-sm mb-4">Líderes em soluções ambientais e tecnologia de drones para o agronegócio e reflorestamento no Brasil.</p>
       <p class="text-primary font-bold text-sm">Soluções em reflorestamento, meio ambiente e agricultura</p>
@@ -592,6 +751,34 @@
         mobileMenu.classList.remove('flex');
       });
     });
+  }
+
+  // Before/After slider
+  const baCompare = document.getElementById('ba-compare');
+  if (baCompare) {
+    const clip = document.getElementById('ba-clip');
+    const handle = document.getElementById('ba-handle');
+    const beforeImg = clip.querySelector('img');
+    let dragging = false;
+    const setPos = (clientX) => {
+      const rect = baCompare.getBoundingClientRect();
+      let x = ((clientX - rect.left) / rect.width) * 100;
+      x = Math.max(0, Math.min(100, x));
+      clip.style.width = x + '%';
+      handle.style.left = x + '%';
+      beforeImg.style.width = rect.width + 'px';
+    };
+    const onResize = () => {
+      beforeImg.style.width = baCompare.getBoundingClientRect().width + 'px';
+    };
+    onResize();
+    window.addEventListener('resize', onResize);
+    baCompare.addEventListener('mousedown', e => { dragging = true; setPos(e.clientX); });
+    window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
+    window.addEventListener('mouseup', () => dragging = false);
+    baCompare.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchend', () => dragging = false);
   }
 
   // Smooth scroll
