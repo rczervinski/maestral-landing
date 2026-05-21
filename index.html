@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ma&amp;Stral | Serviços Florestais e Ambientais no Paraná</title>
+  <meta name="description" content="Reflorestamento, inventário florestal, licenciamento ambiental, topografia e pulverização com drones. Operação no Paraná."/>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" rel="stylesheet"/>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <link rel="stylesheet" href="css/style.css"/>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "base":       "#FAFAF6",
+            "soft":       "#F1EFE8",
+            "ink":        "#1A1F1A",
+            "ink-soft":   "#4A524A",
+            "brand":      "#31D53B",
+            "brand-deep": "#1B4332",
+            "brand-moss": "#52796F",
+            "earth":      "#8B6F47",
+            "line":       "#E5E2DA"
+          },
+          fontFamily: {
+            "display": ["Fraunces", "Georgia", "serif"],
+            "body":    ["Inter", "system-ui", "sans-serif"],
+            "mono":    ["JetBrains Mono", "ui-monospace", "monospace"]
+          },
+          borderRadius: { "lg": "0.5rem", "2xl": "1rem" }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html, body { background:#FAFAF6; color:#1A1F1A; }
+    body { font-family:'Inter', system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+    .font-display { font-family:'Fraunces', Georgia, serif; font-optical-sizing:auto; }
+    .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24; }
+    ::selection { background:#1B4332; color:#FAFAF6; }
+    model-viewer { --progress-bar-color: transparent; background: transparent; }
+
+    /* Eyebrow: "— label" treatment */
+    .eyebrow { color:#52796F; font-weight:500; font-size:0.875rem; display:inline-flex; align-items:center; gap:0.5rem; }
+    .eyebrow::before { content:""; display:inline-block; width:1.5rem; height:1px; background:#52796F; }
+    .eyebrow.on-dark { color:#9DBCAE; }
+    .eyebrow.on-dark::before { background:#9DBCAE; }
+
+    /* Subtle texture line for section dividers */
+    .divider-line { height:1px; background:#E5E2DA; }
+
+    /* Smooth fade-in for sections */
+    .reveal { opacity:0; transform:translateY(16px); transition:opacity .8s ease, transform .8s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+
+    /* Before/after handle */
+    #ba-handle::after { content:""; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:48px; height:48px; border-radius:9999px; background:#FAFAF6; box-shadow:0 8px 24px rgba(0,0,0,.18); }
+    #ba-handle::before { content:"⇆"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; font-family:'Inter'; font-size:18px; font-weight:600; color:#1B4332; }
+
+    /* Mobile menu */
+    #mobile-menu { transition: opacity .25s ease; }
+    body.no-scroll { overflow:hidden; }
+  </style>
+</head>
+<body class="bg-base text-ink">
+
+<!-- ============================ HEADER ============================ -->
+<header class="fixed top-0 inset-x-0 z-50 bg-base/85 backdrop-blur-md border-b border-line/70">
+  <nav class="max-w-7xl mx-auto px-6 md:px-10 h-[68px] flex items-center justify-between">
+    <a href="#" class="flex items-center" aria-label="Ma&Stral - Início">
+      <img src="maestral-logo.svg" alt="Ma&Stral" class="h-7 md:h-8 w-auto"/>
+    </a>
+    <div class="hidden md:flex items-center gap-9 text-[15px] text-ink-soft">
+      <a class="hover:text-brand-deep transition-colors" href="#services">Serviços</a>
+      <a class="hover:text-brand-deep transition-colors" href="#about">Sobre</a>
+      <a class="hover:text-brand-deep transition-colors" href="#impact">Impacto</a>
+      <a class="hover:text-brand-deep transition-colors" href="#tech">Tecnologia</a>
+      <a class="hover:text-brand-deep transition-colors" href="#contact">Contato</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <a class="hidden sm:inline-flex items-center gap-2 bg-brand-deep text-base hover:bg-ink transition-colors px-5 py-2.5 rounded-lg text-sm font-medium" href="https://wa.me/5541991511406?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Ma%26Stral." target="_blank" rel="noopener noreferrer">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+        Fale Conosco
+      </a>
+      <button id="menu-toggle" class="md:hidden text-ink p-2" aria-label="Abrir menu">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- Mobile menu -->
+<div id="mobile-menu" class="fixed inset-0 z-[100] bg-base hidden flex-col items-center justify-center gap-8">
+  <button id="menu-close" class="absolute top-5 right-5 text-ink p-2" aria-label="Fechar menu">
+    <span class="material-symbols-outlined text-3xl">close</span>
+  </button>
+  <nav class="flex flex-col items-center gap-6 text-center text-3xl font-display">
+    <a class="text-brand-deep" href="#services">Serviços</a>
+    <a class="text-brand-deep" href="#about">Sobre</a>
+    <a class="text-brand-deep" href="#impact">Impacto</a>
+    <a class="text-brand-deep" href="#tech">Tecnologia</a>
+    <a class="text-brand-deep" href="#contact">Contato</a>
+    <a class="mt-2 inline-flex items-center gap-2 bg-brand-deep text-base px-6 py-3 rounded-lg text-base font-medium" href="https://wa.me/5541991511406?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Ma%26Stral." target="_blank" rel="noopener noreferrer">Fale Conosco</a>
+  </nav>
+</div>
+
+<!-- ============================ HERO ============================ -->
+<section class="relative min-h-[92vh] flex items-center overflow-hidden bg-base">
+  <!-- Background photo + light overlay -->
+  <div class="absolute inset-0">
+    <img src="assets/images/hero-floresta.jpg" alt="Floresta de pinus sob luz do dia" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high"/>
+    <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(250,250,246,0.92) 0%, rgba(250,250,246,0.55) 40%, rgba(250,250,246,0.35) 100%);"></div>
+    <div class="absolute inset-x-0 bottom-0 h-32" style="background:linear-gradient(180deg, rgba(250,250,246,0) 0%, #FAFAF6 100%);"></div>
+  </div>
+
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 pt-28 pb-20 grid md:grid-cols-12 gap-10 items-center">
+    <!-- Left: copy -->
+    <div class="md:col-span-7">
+      <span class="eyebrow mb-6">Reflorestamento e meio ambiente · Paraná</span>
+      <h1 class="font-display font-semibold text-brand-deep text-[2.6rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[1.04] tracking-[-0.01em] mt-5" style="font-variation-settings: &#39;opsz&#39; 96; font-family: &quot;Segoe UI Emoji&quot;">
+        Manejo florestal de<br/>precisão para quem<br/>planta a longo prazo.
+      </h1>
+      <p class="mt-7 text-lg md:text-xl text-ink-soft max-w-xl leading-relaxed">
+        Reflorestamento, inventário, licenciamento ambiental, topografia e pulverização com drones — operando para silvicultores e produtores rurais no Paraná desde 2018.
+      </p>
+      <div class="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4">
+        <a href="https://wa.me/5541991511406?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Ma%26Stral." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-deep text-base hover:bg-ink transition-colors px-7 py-3.5 rounded-lg text-[15px] font-medium shadow-md">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+          Falar com a equipe
+        </a>
+        <a href="#services" class="inline-flex items-center gap-2 text-brand-deep hover:text-ink transition-colors text-[15px] font-medium underline-offset-4 hover:underline">
+          Explorar serviços
+          <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+      </div>
+      <!-- Trust strip -->
+      <div class="mt-12 pt-6 border-t border-line flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-ink-soft">
+        <span class="font-mono text-xs text-brand-moss">EM CAMPO DESDE 2018</span>
+        <span class="hidden sm:inline w-px h-4 bg-line"></span>
+        <span>Curitiba · Tunas do Paraná · Bocaiúva do Sul</span>
+        <span class="hidden sm:inline w-px h-4 bg-line"></span>
+        <span>14 cidades no PR</span>
+      </div>
+    </div>
+
+    <!-- Right: 3D Pinus + sidecard -->
+    <div class="md:col-span-5 relative">
+      <div class="relative w-full h-[360px] sm:h-[440px] md:h-[560px]">
+        <model-viewer
+          src="assets/models/pinus.glb"
+          auto-rotate
+          camera-controls
+          rotation-per-second="6deg"
+          interaction-prompt="none"
+          shadow-intensity="0"
+          ar="false"
+          style="width:100%;height:100%;background:transparent;"
+        ></model-viewer>
+      </div>
+      <!-- Caption -->
+      <div class="hidden md:flex absolute bottom-4 left-0 right-0 mx-auto w-fit items-center gap-3 bg-base/85 border border-line rounded-lg px-4 py-2">
+        <span class="material-symbols-outlined text-brand-moss text-base">forest</span>
+        <div class="text-xs font-mono text-ink-soft">Pinus taeda · modelo 3D · arraste para girar</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ STATS ============================ -->
+<section class="bg-soft border-y border-line">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-24">
+    <div class="grid md:grid-cols-12 gap-10 items-end">
+      <div class="md:col-span-5">
+        <span class="eyebrow">Operação 2018–2026</span>
+        <h2 class="font-display font-semibold text-brand-deep text-3xl md:text-4xl lg:text-5xl leading-[1.1] mt-4">
+          Números que sustentam<br/>cada hectare entregue.
+        </h2>
+      </div>
+      <p class="md:col-span-5 md:col-start-8 text-ink-soft text-base md:text-lg leading-relaxed">
+        Plantio, manejo e monitoramento documentados em laudos técnicos. Cada projeto carrega rastreabilidade GPS, fotografias aéreas e relatório agronômico assinado.
+      </p>
+    </div>
+
+    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-6 md:gap-x-4">
+      <div class="border-l-2 border-line pl-6">
+        <div class="font-display font-semibold text-brand-deep text-[3.5rem] md:text-[4.2rem] leading-none counter" data-target="180" data-suffix="+">0</div>
+        <p class="mt-3 text-sm text-ink-soft">Fazendas atendidas</p>
+      </div>
+      <div class="border-l-2 border-line pl-6">
+        <div class="font-display font-semibold text-brand-deep text-[3.5rem] md:text-[4.2rem] leading-none counter" data-target="38000" data-format="k">0</div>
+        <p class="mt-3 text-sm text-ink-soft">Hectares plantados</p>
+      </div>
+      <div class="border-l-2 border-line pl-6">
+        <div class="font-display font-semibold text-brand-deep text-[3.5rem] md:text-[4.2rem] leading-none counter" data-target="42">0</div>
+        <p class="mt-3 text-sm text-ink-soft">Equipes em campo</p>
+      </div>
+      <div class="border-l-2 border-line pl-6">
+        <div class="font-display font-semibold text-brand-deep text-[3.5rem] md:text-[4.2rem] leading-none counter" data-target="14">0</div>
+        <p class="mt-3 text-sm text-ink-soft">Cidades no Paraná</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ABOUT ============================ -->
+<section class="py-24 md:py-32 bg-base" id="about">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="grid md:grid-cols-12 gap-10 md:gap-16">
+      <div class="md:col-span-5">
+        <span class="eyebrow">Quem somos</span>
+        <h2 class="font-display font-semibold text-brand-deep text-4xl md:text-5xl lg:text-6xl leading-[1.05] mt-5 tracking-[-0.01em]">
+          Nascida na terra,<br/>impulsionada por dados.
+        </h2>
+      </div>
+      <div class="md:col-span-7 md:pt-3">
+        <p class="text-lg text-ink-soft leading-relaxed">
+          A Ma&amp;Stral é uma empresa paranaense de serviços florestais e ambientais. Combinamos engenharia florestal, agronomia e operação aérea com drones para entregar manejo de Pinus, recuperação de áreas degradadas e licenciamento ambiental para silvicultores, cooperativas e produtores rurais.
+        </p>
+        <p class="mt-5 text-lg text-ink-soft leading-relaxed">
+          Operamos com equipes próprias — sem terceirizar campo. Cada laudo, cada mapa e cada voo é responsabilidade da nossa engenharia.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-ink-soft">
+          <span class="inline-flex items-center gap-2"><span class="material-symbols-outlined text-brand-moss text-lg">verified</span>CREA-PR / IBAMA</span>
+          <span class="inline-flex items-center gap-2"><span class="material-symbols-outlined text-brand-moss text-lg">flight_takeoff</span>ANAC SISANT</span>
+          <span class="inline-flex items-center gap-2"><span class="material-symbols-outlined text-brand-moss text-lg">eco</span>Certificação fitossanitária</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillars -->
+    <div class="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-5">
+      <article class="bg-base border border-line rounded-2xl p-8 hover:shadow-lg transition-shadow">
+        <div class="w-11 h-11 rounded-lg bg-brand-deep/10 text-brand-deep flex items-center justify-center mb-7">
+          <span class="material-symbols-outlined">park</span>
+        </div>
+        <h3 class="font-display font-semibold text-xl text-brand-deep">Reflorestamento</h3>
+        <p class="mt-3 text-[15px] text-ink-soft leading-relaxed">Recuperação de áreas degradadas com mudas nativas e Pinus, plano de manejo sustentável e acompanhamento técnico até o terceiro ano.</p>
+      </article>
+      <article class="bg-base border border-line rounded-2xl p-8 hover:shadow-lg transition-shadow">
+        <div class="w-11 h-11 rounded-lg bg-brand-deep/10 text-brand-deep flex items-center justify-center mb-7">
+          <span class="material-symbols-outlined">public</span>
+        </div>
+        <h3 class="font-display font-semibold text-xl text-brand-deep">Meio ambiente</h3>
+        <p class="mt-3 text-[15px] text-ink-soft leading-relaxed">Licenciamento ambiental, georreferenciamento de Reserva Legal/APP e regularização junto ao IAT e órgãos municipais.</p>
+      </article>
+      <article class="bg-base border border-line rounded-2xl p-8 hover:shadow-lg transition-shadow">
+        <div class="w-11 h-11 rounded-lg bg-brand-deep/10 text-brand-deep flex items-center justify-center mb-7">
+          <span class="material-symbols-outlined">agriculture</span>
+        </div>
+        <h3 class="font-display font-semibold text-xl text-brand-deep">Agricultura</h3>
+        <p class="mt-3 text-[15px] text-ink-soft leading-relaxed">Pulverização e distribuição de sólidos com drones, otimização de insumos e monitoramento aéreo da lavoura ao longo do ciclo.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ IMPACT ============================ -->
+<section class="py-24 md:py-32 bg-soft" id="impact">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      <div>
+        <span class="eyebrow">Impacto real</span>
+        <h2 class="font-display font-semibold text-brand-deep text-3xl md:text-5xl leading-[1.1] mt-4">Da degradação à floresta.</h2>
+      </div>
+      <p class="text-base md:text-lg text-ink-soft max-w-md leading-relaxed">
+        Comparativos aéreos reais de áreas de Pinus recuperadas pela Ma&amp;Stral em parceiros do Paraná. Arraste a alça para revelar o antes e depois.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <!-- Before / After -->
+      <div class="lg:col-span-7">
+        <div id="ba-compare" class="relative rounded-2xl overflow-hidden shadow-lg select-none cursor-ew-resize aspect-[16/10] bg-line">
+          <img src="assets/images/about-depois.png" alt="Área reflorestada vista por drone" class="absolute inset-0 w-full h-full object-cover pointer-events-none" loading="lazy"/>
+          <div id="ba-clip" class="absolute inset-0 overflow-hidden pointer-events-none" style="width:50%">
+            <img src="assets/images/about-antes.png" alt="Área degradada vista por drone" class="absolute inset-0 h-full object-cover" style="width:calc(100vw); max-width:none;" loading="lazy"/>
+          </div>
+          <div class="absolute top-4 left-4 bg-base text-ink text-[11px] font-mono uppercase tracking-wider px-3 py-1.5 rounded-lg">Antes</div>
+          <div class="absolute top-4 right-4 bg-brand-deep text-base text-[11px] font-mono uppercase tracking-wider px-3 py-1.5 rounded-lg">Depois</div>
+          <div id="ba-handle" class="absolute top-0 bottom-0 w-px bg-base pointer-events-none" style="left:50%"></div>
+        </div>
+        <div class="grid grid-cols-3 gap-4 mt-5">
+          <div class="bg-base rounded-lg p-4 border border-line">
+            <div class="font-display font-semibold text-brand-deep text-2xl md:text-3xl">+340%</div>
+            <p class="text-xs text-ink-soft mt-1">Cobertura vegetal</p>
+          </div>
+          <div class="bg-base rounded-lg p-4 border border-line">
+            <div class="font-display font-semibold text-brand-deep text-2xl md:text-3xl">36 <span class="text-base font-body">meses</span></div>
+            <p class="text-xs text-ink-soft mt-1">Tempo de recuperação</p>
+          </div>
+          <div class="bg-base rounded-lg p-4 border border-line">
+            <div class="font-display font-semibold text-brand-deep text-2xl md:text-3xl">12 <span class="text-base font-body">espécies</span></div>
+            <p class="text-xs text-ink-soft mt-1">Nativas plantadas</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right panel -->
+      <div class="lg:col-span-5 bg-base rounded-2xl p-7 md:p-8 border border-line flex flex-col">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-brand-moss">monitoring</span>
+          <h3 class="font-display font-semibold text-xl text-brand-deep">Impacto mensurado</h3>
+        </div>
+        <p class="text-sm text-ink-soft mb-7 leading-relaxed">Hectares reflorestados pela Ma&amp;Stral por ano. Dados consolidados de operações em campo.</p>
+
+        <!-- Bar chart -->
+        <div class="mb-7">
+          <svg viewBox="0 0 320 160" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" aria-label="Hectares plantados por ano">
+            <line x1="0" y1="20"  x2="320" y2="20"  stroke="#E5E2DA" stroke-width="1"/>
+            <line x1="0" y1="60"  x2="320" y2="60"  stroke="#E5E2DA" stroke-width="1"/>
+            <line x1="0" y1="100" x2="320" y2="100" stroke="#E5E2DA" stroke-width="1"/>
+            <line x1="0" y1="140" x2="320" y2="140" stroke="#1B4332" stroke-width="1" opacity="0.4"/>
+            <g>
+              <rect x="14"  y="110" width="32" height="30"  rx="2" fill="#1B4332" opacity="0.32"/>
+              <rect x="64"  y="92"  width="32" height="48"  rx="2" fill="#1B4332" opacity="0.5"/>
+              <rect x="114" y="74"  width="32" height="66"  rx="2" fill="#1B4332" opacity="0.65"/>
+              <rect x="164" y="54"  width="32" height="86"  rx="2" fill="#1B4332" opacity="0.8"/>
+              <rect x="214" y="42"  width="32" height="98"  rx="2" fill="#1B4332" opacity="0.92"/>
+              <rect x="264" y="28"  width="32" height="112" rx="2" fill="#1B4332"/>
+            </g>
+            <g font-family="Inter, sans-serif" font-size="9" fill="#4A524A" text-anchor="middle">
+              <text x="30"  y="154">2021</text>
+              <text x="80"  y="154">2022</text>
+              <text x="130" y="154">2023</text>
+              <text x="180" y="154">2024</text>
+              <text x="230" y="154">2025</text>
+              <text x="280" y="154">2026</text>
+            </g>
+            <g font-family="Fraunces, Georgia, serif" font-size="9" font-weight="600" fill="#1B4332" text-anchor="middle">
+              <text x="30"  y="105">2.5k</text>
+              <text x="80"  y="87">4.0k</text>
+              <text x="130" y="69">5.5k</text>
+              <text x="180" y="49">7.2k</text>
+              <text x="230" y="37">8.5k</text>
+              <text x="280" y="23">10k</text>
+            </g>
+          </svg>
+          <p class="text-[11px] text-ink-soft mt-2 text-center">Hectares plantados por ano</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2.5 mt-auto">
+          <div class="bg-soft rounded-lg p-3.5">
+            <div class="flex items-baseline gap-1">
+              <span class="font-display font-semibold text-brand-deep text-2xl">28,4</span>
+              <span class="text-xs text-ink-soft">mil t</span>
+            </div>
+            <p class="text-[11px] text-ink-soft mt-1">CO₂ sequestrado</p>
+          </div>
+          <div class="bg-soft rounded-lg p-3.5">
+            <div class="flex items-baseline gap-1">
+              <span class="font-display font-semibold text-brand-deep text-2xl">1,2</span>
+              <span class="text-xs text-ink-soft">milhão</span>
+            </div>
+            <p class="text-[11px] text-ink-soft mt-1">Mudas de pinus</p>
+          </div>
+          <div class="bg-soft rounded-lg p-3.5">
+            <div class="font-display font-semibold text-brand-deep text-2xl">96%</div>
+            <p class="text-[11px] text-ink-soft mt-1">Taxa de sobrevivência</p>
+          </div>
+          <div class="bg-soft rounded-lg p-3.5">
+            <div class="flex items-baseline gap-1">
+              <span class="font-display font-semibold text-brand-deep text-2xl">14</span>
+              <span class="text-xs text-ink-soft">cidades</span>
+            </div>
+            <p class="text-[11px] text-ink-soft mt-1">Atendidas no PR</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cases gallery -->
+    <div class="mt-16">
+      <div class="flex items-baseline justify-between gap-4 mb-7">
+        <h3 class="font-display font-semibold text-2xl md:text-3xl text-brand-deep">Cases recentes</h3>
+        <span class="text-xs font-mono text-brand-moss hidden sm:block">SELECIONADOS · 2024–2025</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <article class="group rounded-2xl overflow-hidden bg-base border border-line">
+          <div class="relative aspect-[4/3] overflow-hidden">
+            <img src="assets/images/case-fazenda-1.png" alt="Drone sobre fazenda reflorestada" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-deep/90 via-brand-deep/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-5">
+              <span class="text-[11px] font-mono uppercase tracking-wider text-brand opacity-90">Tunas do Paraná · PR · 2025</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h4 class="font-display font-semibold text-lg text-brand-deep">Fazenda Santa Clara</h4>
+            <div class="flex gap-5 mt-3 text-sm text-ink-soft">
+              <span><b class="font-display font-semibold text-brand-deep">240 ha</b> de Pinus</span>
+              <span><b class="font-display font-semibold text-brand-deep">14 meses</b> de execução</span>
+            </div>
+          </div>
+        </article>
+        <article class="group rounded-2xl overflow-hidden bg-base border border-line">
+          <div class="relative aspect-[4/3] overflow-hidden">
+            <img src="assets/images/case-fazenda-2.png" alt="Drone sobre plantio em linhas" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-deep/90 via-brand-deep/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-5">
+              <span class="text-[11px] font-mono uppercase tracking-wider text-brand opacity-90">Curitiba · RM · 2024</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h4 class="font-display font-semibold text-lg text-brand-deep">Reserva Araucária</h4>
+            <div class="flex gap-5 mt-3 text-sm text-ink-soft">
+              <span><b class="font-display font-semibold text-brand-deep">180 ha</b> mapeados</span>
+              <span><b class="font-display font-semibold text-brand-deep">RTK 2 cm</b></span>
+            </div>
+          </div>
+        </article>
+        <article class="group rounded-2xl overflow-hidden bg-base border border-line">
+          <div class="relative aspect-[4/3] overflow-hidden">
+            <img src="assets/images/case-fazenda-3.png" alt="Drone pulverizando talhão de eucalipto" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-deep/90 via-brand-deep/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-5">
+              <span class="text-[11px] font-mono uppercase tracking-wider text-brand opacity-90">Bocaiúva do Sul · PR · 2025</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h4 class="font-display font-semibold text-lg text-brand-deep">Talhão Pinus Sul</h4>
+            <div class="flex gap-5 mt-3 text-sm text-ink-soft">
+              <span><b class="font-display font-semibold text-brand-deep">280 ha</b> pulverizados</span>
+              <span><b class="font-display font-semibold text-brand-deep">−38%</b> insumos</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SERVICES ============================ -->
+<section class="py-24 md:py-32 bg-base" id="services">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="grid md:grid-cols-12 gap-10 items-end mb-14">
+      <div class="md:col-span-7">
+        <span class="eyebrow">Especialidades</span>
+        <h2 class="font-display font-semibold text-brand-deep text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-[-0.01em] mt-4">
+          Nossa atuação<br/>no campo e na cidade.
+        </h2>
+      </div>
+      <p class="md:col-span-5 text-ink-soft text-base md:text-lg leading-relaxed">
+        Combinamos engenharia florestal, agronomia e operação aérea com drones para entregar resultados auditáveis em cada projeto — do plantio ao laudo.
+      </p>
+    </div>
+
+    <!-- Editorial service grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
+      <article class="group rounded-2xl bg-base border border-line overflow-hidden hover:shadow-lg transition-shadow">
+        <div class="aspect-[4/3] overflow-hidden bg-soft">
+          <img src="assets/images/servico-inventario.jpg" alt="Inventário florestal" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]" loading="lazy"/>
+        </div>
+        <div class="p-6 md:p-7">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="material-symbols-outlined text-brand-moss">forest</span>
+            <span class="font-mono text-[11px] text-brand-moss uppercase tracking-wider">01 · Silvicultura</span>
+          </div>
+          <h3 class="font-display font-semibold text-xl text-brand-deep">Inventário florestal</h3>
+          <p class="mt-2 text-[15px] text-ink-soft leading-relaxed">Levantamento dendrométrico, volumetria por talhão e estimativa de produção. Relatório técnico com mapa por classe diamétrica.</p>
+        </div>
+      </article>
+
+      <article class="group rounded-2xl bg-base border border-line overflow-hidden hover:shadow-lg transition-shadow">
+        <div class="aspect-[4/3] overflow-hidden bg-soft">
+          <img src="assets/images/servico-licenciamento.jpg" alt="Licenciamento ambiental" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]" loading="lazy"/>
+        </div>
+        <div class="p-6 md:p-7">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="material-symbols-outlined text-brand-moss">description</span>
+            <span class="font-mono text-[11px] text-brand-moss uppercase tracking-wider">02 · Regulatório</span>
+          </div>
+          <h3 class="font-display font-semibold text-xl text-brand-deep">Licenciamento ambiental</h3>
+          <p class="mt-2 text-[15px] text-ink-soft leading-relaxed">Regularização junto ao IAT, georreferenciamento de Reserva Legal/APP, autorização de supressão e CAR.</p>
+        </div>
+      </article>
+
+      <article class="group rounded-2xl bg-base border border-line overflow-hidden hover:shadow-lg transition-shadow">
+        <div class="aspect-[4/3] overflow-hidden bg-soft">
+          <img src="assets/images/servico-topografico.jpg" alt="Levantamento topográfico" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]" loading="lazy"/>
+        </div>
+        <div class="p-6 md:p-7">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="material-symbols-outlined text-brand-moss">landslide</span>
+            <span class="font-mono text-[11px] text-brand-moss uppercase tracking-wider">03 · Geomática</span>
+          </div>
+          <h3 class="font-display font-semibold text-xl text-brand-deep">Levantamento topográfico</h3>
+          <p class="mt-2 text-[15px] text-ink-soft leading-relaxed">Aerolevantamento com RTK, modelo digital de terreno e curvas de nível para projetos de engenharia e silvicultura.</p>
+        </div>
+      </article>
+
+      <article class="group rounded-2xl bg-base border border-line overflow-hidden hover:shadow-lg transition-shadow">
+        <div class="aspect-[4/3] overflow-hidden bg-soft">
+          <img src="assets/images/servico-mapas.jpg" alt="Elaboração de mapas" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]" loading="lazy"/>
+        </div>
+        <div class="p-6 md:p-7">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="material-symbols-outlined text-brand-moss">map</span>
+            <span class="font-mono text-[11px] text-brand-moss uppercase tracking-wider">04 · Cartografia</span>
+          </div>
+          <h3 class="font-display font-semibold text-xl text-brand-deep">Elaboração de mapas</h3>
+          <p class="mt-2 text-[15px] text-ink-soft leading-relaxed">Cartografia digital, ortomosaicos georreferenciados e mapas temáticos (NDVI, declividade, uso e ocupação do solo).</p>
+        </div>
+      </article>
+
+      <article class="group rounded-2xl bg-base border border-line overflow-hidden hover:shadow-lg transition-shadow">
+        <div class="aspect-[4/3] overflow-hidden bg-soft">
+          <img src="assets/images/servico-pulverizacao.jpg" alt="Pulverização com drones" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]" loading="lazy"/>
+        </div>
+        <div class="p-6 md:p-7">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="material-symbols-outlined text-brand-moss">precision_manufacturing</span>
+            <span class="font-mono text-[11px] text-brand-moss uppercase tracking-wider">05 · Aplicação aérea</span>
+          </div>
+          <h3 class="font-display font-semibold text-xl text-brand-deep">Pulverização com drones</h3>
+          <p class="mt-2 text-[15px] text-ink-soft leading-relaxed">Aplicação aérea localizada, deriva controlada e redução média de 30% no uso de defensivos em manejo de Pinus.</p>
+        </div>
+      </article>
+
+      <article class="group rounded-2xl bg-base border border-line overflow-hidden hover:shadow-lg transition-shadow">
+        <div class="aspect-[4/3] overflow-hidden bg-soft">
+          <img src="assets/images/servico-solidos.jpg" alt="Distribuição de sólidos" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]" loading="lazy"/>
+        </div>
+        <div class="p-6 md:p-7">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="material-symbols-outlined text-brand-moss">deployed_code</span>
+            <span class="font-mono text-[11px] text-brand-moss uppercase tracking-wider">06 · Aplicação aérea</span>
+          </div>
+          <h3 class="font-display font-semibold text-xl text-brand-deep">Distribuição de sólidos</h3>
+          <p class="mt-2 text-[15px] text-ink-soft leading-relaxed">Semeadura aérea, fertilização granulada e isca formicida em larga escala via drones DJI Agras.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TECH ============================ -->
+<section class="py-24 md:py-32 bg-brand-deep text-base" id="tech">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="grid md:grid-cols-12 gap-10 md:gap-14 items-start">
+      <div class="md:col-span-5">
+        <span class="eyebrow on-dark">Dossiê técnico</span>
+        <h2 class="font-display font-semibold text-base text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-[-0.01em] mt-5">
+          Tecnologia<br/>a serviço do<br/>manejo florestal.
+        </h2>
+        <p class="mt-7 text-base/relaxed text-base/80 max-w-md" style="color:#D6DCD3;">
+          Nossa frota não é vitrine. Cada equipamento listado abaixo é operado por piloto certificado pela ANAC e mantido em rotina interna de calibração.
+        </p>
+        <div class="mt-8 inline-flex items-center gap-3 border border-base/15 rounded-lg px-4 py-3 text-sm" style="color:#D6DCD3;">
+          <span class="material-symbols-outlined text-brand">verified</span>
+          Operação registrada — SISANT / ANAC
+        </div>
+      </div>
+
+      <div class="md:col-span-7">
+        <!-- Drone photo -->
+        <div class="rounded-2xl overflow-hidden border border-base/10 shadow-lg">
+          <img src="assets/images/drone-tech.jpg" alt="Drone DJI Agras T40 em campo" id="drone-img" class="w-full h-auto block"/>
+        </div>
+
+        <!-- Tech dossier list -->
+        <div class="mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-1 divide-y divide-base/10 sm:divide-y-0">
+          <div class="py-5 sm:py-6 sm:border-t sm:border-base/10">
+            <div class="flex items-baseline justify-between gap-4">
+              <h4 class="font-display font-semibold text-lg text-base">DJI Agras T40</h4>
+              <span class="font-mono text-xs text-brand">PULVERIZAÇÃO</span>
+            </div>
+            <p class="mt-1.5 text-sm" style="color:#B8C2BC;">Tanque 40 L · 21,5 ha/h · varredura 11 m</p>
+          </div>
+          <div class="py-5 sm:py-6 sm:border-t sm:border-base/10">
+            <div class="flex items-baseline justify-between gap-4">
+              <h4 class="font-display font-semibold text-lg text-base">DJI Matrice 350 RTK</h4>
+              <span class="font-mono text-xs text-brand">MAPEAMENTO</span>
+            </div>
+            <p class="mt-1.5 text-sm" style="color:#B8C2BC;">RTK 1 cm + 1 ppm · 55 min de voo · IP55</p>
+          </div>
+          <div class="py-5 sm:py-6 border-t border-base/10">
+            <div class="flex items-baseline justify-between gap-4">
+              <h4 class="font-display font-semibold text-lg text-base">Sensor multiespectral MicaSense</h4>
+              <span class="font-mono text-xs text-brand">ANÁLISE</span>
+            </div>
+            <p class="mt-1.5 text-sm" style="color:#B8C2BC;">5 bandas + NDVI · detecção precoce de stress</p>
+          </div>
+          <div class="py-5 sm:py-6 border-t border-base/10">
+            <div class="flex items-baseline justify-between gap-4">
+              <h4 class="font-display font-semibold text-lg text-base">Estação RTK Emlid</h4>
+              <span class="font-mono text-xs text-brand">GEORREF.</span>
+            </div>
+            <p class="mt-1.5 text-sm" style="color:#B8C2BC;">Base própria em campo · precisão centimétrica</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CTA ============================ -->
+<section class="py-20 md:py-24 px-6 md:px-10 bg-base" id="contact">
+  <div class="max-w-7xl mx-auto bg-brand-deep rounded-2xl px-8 md:px-16 py-16 md:py-24 text-base">
+    <div class="grid md:grid-cols-12 gap-10 items-center">
+      <div class="md:col-span-7">
+        <span class="eyebrow on-dark">Próximo passo</span>
+        <h2 class="font-display font-semibold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-[-0.01em] mt-5">
+          Pronto para o<br/>próximo plantio?
+        </h2>
+        <p class="mt-6 text-lg max-w-lg" style="color:#D6DCD3;">
+          Conte o tamanho da área, a localização e o objetivo. Nossa equipe técnica retorna em até 24h com diagnóstico inicial e orçamento.
+        </p>
+      </div>
+      <div class="md:col-span-5 flex md:justify-end">
+        <a href="https://wa.me/5541991511406?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Ma%26Stral." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-brand text-brand-deep hover:bg-base transition-colors px-8 py-4 rounded-lg text-base font-medium shadow-lg">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+          Conversar agora
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="bg-brand-deep text-base">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 py-16 md:py-20 grid grid-cols-1 md:grid-cols-12 gap-10">
+    <div class="md:col-span-5">
+      <img src="maestral-logo.svg" alt="Ma&Stral" class="h-10 w-auto mb-6 brightness-0 invert"/>
+      <p class="text-[15px] leading-relaxed max-w-sm" style="color:#D6DCD3;">
+        Serviços florestais e ambientais para silvicultores e produtores rurais. Reflorestamento, licenciamento, topografia e operação aérea com drones.
+      </p>
+    </div>
+
+    <div class="md:col-span-2">
+      <h4 class="font-mono text-xs uppercase tracking-wider mb-4" style="color:#9DBCAE;">Serviços</h4>
+      <ul class="space-y-2.5 text-[15px]" style="color:#D6DCD3;">
+        <li><a href="#services" class="hover:text-base transition-colors">Reflorestamento</a></li>
+        <li><a href="#services" class="hover:text-base transition-colors">Inventário florestal</a></li>
+        <li><a href="#services" class="hover:text-base transition-colors">Licenciamento</a></li>
+        <li><a href="#services" class="hover:text-base transition-colors">Topografia</a></li>
+        <li><a href="#services" class="hover:text-base transition-colors">Pulverização</a></li>
+      </ul>
+    </div>
+
+    <div class="md:col-span-2">
+      <h4 class="font-mono text-xs uppercase tracking-wider mb-4" style="color:#9DBCAE;">Empresa</h4>
+      <ul class="space-y-2.5 text-[15px]" style="color:#D6DCD3;">
+        <li><a href="#about" class="hover:text-base transition-colors">Sobre</a></li>
+        <li><a href="#impact" class="hover:text-base transition-colors">Impacto</a></li>
+        <li><a href="#tech" class="hover:text-base transition-colors">Tecnologia</a></li>
+        <li><a href="#contact" class="hover:text-base transition-colors">Contato</a></li>
+      </ul>
+    </div>
+
+    <div class="md:col-span-3">
+      <h4 class="font-mono text-xs uppercase tracking-wider mb-4" style="color:#9DBCAE;">Contato</h4>
+      <ul class="space-y-2.5 text-[15px]" style="color:#D6DCD3;">
+        <li>
+          <a href="https://wa.me/5541991511406" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-base transition-colors">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+            +55 (41) 99151-1406
+          </a>
+        </li>
+        <li class="leading-relaxed">
+          Paraná · Brasil<br/>
+          Atendimento: Curitiba e RMC,<br/>Tunas do Paraná, Bocaiúva do Sul
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-base/10">
+    <div class="max-w-7xl mx-auto px-6 md:px-10 py-6 flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs font-mono" style="color:#9DBCAE;">
+      <p>© 2026 Ma&amp;Stral · Serviços florestais e ambientais · Paraná, Brasil</p>
+      <p>CREA-PR · IBAMA · ANAC SISANT</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/5541991511406?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Ma%26Stral." target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp" class="fixed bottom-5 right-5 z-50 w-13 h-13 bg-brand-deep hover:bg-ink transition-colors rounded-full flex items-center justify-center shadow-lg" style="width:52px;height:52px;">
+  <svg class="w-6 h-6 fill-base" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+</a>
+
+<script src="js/main.js"></script>
+</body>
+</html>

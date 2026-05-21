@@ -5,7 +5,8 @@
       "name": "maestral",
       "runtimeExecutable": "node",
       "runtimeArgs": ["server.js"],
-      "port": 3000,
+      "env": { "PORT": "3030" },
+      "port": 3030,
       "autoPort": false
     }
   ]
